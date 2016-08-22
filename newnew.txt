@@ -1,0 +1,71 @@
+create table category(cid int identity(1001,1) primary key,cname varchar(20) unique not null,Isactive bit default '1')
+create table product(pid int primary key identity(10001,1),name varchar(50) unique not null,Colors varchar(100) default 'Black',
+description varchar(200),price money check(price>25000 and price<250000),ctid int references category(cid),IsActive bit default '1')
+select * from category
+select * from product
+insert into category values('Motor Cycle',1)
+insert into category values('Scooter',2)
+insert into category values('Super Bikes',3)
+insert into product values('sbr','green','6 stroke',138978,1001,1)
+insert into product values('apache','yellow','5 stroke',118978,1001,1)
+insert into product values('Bajaj','black','4 stroke',132978,1002,1)
+insert into product values('Honda','blue','4 stroke',119738,1002,1)
+insert into product values('Harley','violet','8 stroke',123978,1003,1)
+
+create proc c_active
+as 
+begin 
+select cid,cname from category where Isactive='true';
+end
+create proc c_active1
+as 
+begin 
+select cid from category where Isactive='true';
+end
+c_active
+'red','good',240000,1001,true
+alter proc c_add(@pid int,@cname varchar(30),@Colors varchar(30),@description varchar(30),@price money,@ctid int,@IsActive bit)
+as declare @idd int
+begin tran
+if exists(select * from product where name=@name)
+begin
+set @idd=0
+end
+else
+begin
+insert into product values(@name,@Colors,@description,@price,@ctid,@IsActive)
+set @idd=SCOPE_IDENTITY()
+end
+if @idd<>0
+begin 
+commit tran
+end
+else
+begin
+rollback tran
+end
+return @idd
+
+alter proc c_ad(@pid int out,@cname varchar(30),@Colors varchar(30),@description varchar(30),@price money,@ctid int,@IsActive bit)
+as
+begin
+insert into product values(@cname,@Colors,@description,@price,@ctid,@IsActive)
+set @pid=scope_identity()
+end
+c_add 'rit','jhv','jhv',213,1001,'true'
+create proc c_ad1(@pid int,@ctid int)
+as
+begin
+insert into product values(@ctid)
+set @pid=scope_identity()
+end
+alter proc c_sr
+as
+begin
+select * from product 
+end
+
+
+
+
+

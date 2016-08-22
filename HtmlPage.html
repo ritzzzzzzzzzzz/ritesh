@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        
+    </style>
+      <script>
+          function fs()
+          {
+             var a= document.getElementById("user").value;
+             var b = document.getElementById("pass").value;
+             if (a == 'dudu' && b == 'dudu') {
+                 //alert("true");
+              //"document.location.href("Default.aspx")"; 
+                 return true;
+             }
+             else
+             {
+                 alert("false");
+             }
+
+          }
+          function valid()
+          {
+              var x = document.forms["my"]["user"].value;
+              var b = document.getElementById("pass").value;
+              if (x == null || x == "" || b == null || b == "")
+              {
+                  alert("wrong");
+                 // return false;
+              }
+          }
+        </script>
+</head>
+<body>
+    <form action="Default3.aspx" method="post" autocomplete="on" name="my" onsubmit="return valid()">
+        <fieldset>
+        <legend>Name</legend>
+    <label>User Name</label>
+    <input type="text" id="user" autofocus="autofocus" placeholder="id"  required />
+    <label>Paasword</label>
+    <input type="text"id="pass" />
+            
+    <button type="submit" name="Submit"  value="submit" style="width: 68px" onclick="return fs()"  >Submit</button>
+    <button type="reset" value="Reset" style="width: 79px" />
+            </fieldset>
+  </form>
+</body>
+</html>
