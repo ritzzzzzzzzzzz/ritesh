@@ -1,0 +1,7 @@
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\bin\Debug\buisnesslayer.dll
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\bin\Debug\buisnesslayer.pdb
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\bin\Debug\Databaselayer.dll
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\bin\Debug\Databaselayer.pdb
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\obj\Debug\buisnesslayer.csprojResolveAssemblyReference.cache
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\obj\Debug\buisnesslayer.dll
+C:\Users\1195901\Documents\Visual Studio 2015\Projects\WebSite1\buisnesslayer\obj\Debug\buisnesslayer.pdb
