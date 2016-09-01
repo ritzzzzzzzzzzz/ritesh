@@ -1,0 +1,7 @@
+ alter procedure p11(@application_no int=null,@firstname varchar(30)=null,@mariagelocation varchar(30)=null)
+  as
+  begin
+ select application_no,firstname from tbl_omr_g6_application c,tbl_omr_g6_persondetails d where 
+ d.Person_id=c.Wifeid or d.Person_id= c.Husbandid and 
+  c.Application_no=@application_no and d.Firstname=@firstname and c.MgrLocation=@mariagelocation 
+  end
