@@ -1,0 +1,225 @@
+//for modellll
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using BO;
+
+
+using System.ComponentModel.DataAnnotations;
+namespace WebApplication1.Models
+{
+    public class empModels
+    {
+        public int sro { get; set; }
+       // public DataSet StoreAllData { get; set; }
+        [Required(ErrorMessage = "Please Enter address")]
+        [Display(Name = "Enter Address")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "address must be between 3 and 50 characters!")]
+        public string Address1 { get; set; }
+
+        [Required(ErrorMessage = "Please Enter address")]
+        [Display(Name = "Enter Alternative Address")]
+       
+        public string Address2 { get; set; }
+
+
+        [Required(ErrorMessage = "Please Enter area")]
+        [Display(Name = "Enter Area")]
+      
+        public string Area { get; set; }
+
+        [Required(ErrorMessage = "Please Enter District")]
+        [Display(Name = "Enter District")]
+     
+        public string District { get; set; }
+
+
+        [Required(ErrorMessage = "Please Enter State")]
+        [Display(Name = "Enter State")]
+       
+        public string State { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Country")]
+        [Display(Name = "Enter Country")]
+        public string Country { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Bank name")]
+        [Display(Name = "Enter Bank Name")]
+        public string Bankname { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Branch")]
+        [Display(Name = "Enter Branch")]
+        public string Branch { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Created by")]
+        [Display(Name = "Enter Created by")]
+        public string Created_by { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Modified by")]
+        [Display(Name = "Enter Modified by")]
+        public string Modified_by { get; set; }
+
+
+
+
+        [Required(ErrorMessage = "Please Enter account no")]
+        [Display(Name = "Enter Account no")]
+        [MaxLength(16, ErrorMessage = "Exceeding Limit")]
+        public int BankAcc { get; set; }
+
+
+
+        [Required(ErrorMessage = "Please Enter IFSC")]
+        [Display(Name = "Enter IFSC")]
+        [MaxLength(16, ErrorMessage = "Exceeding Limit")]
+        public int IFSC_code { get; set; }
+
+        [Required(ErrorMessage = "Please Enter status")]
+        [Display(Name = "Enter status")]
+        public string status { get; set; }
+
+        [Required(ErrorMessage = "Please Enter created date")]
+        [Display(Name = "Enter Created Date ")]
+        public DateTime Created_date { get; set; }
+
+
+        [Required(ErrorMessage = "Please Enter modified date")]
+        [Display(Name = "Enter Modified Date ")]
+        public DateTime Modified_date { get; set; }
+
+    }
+}
+
+
+
+
+//for BO
+    public class empbo
+    {
+     
+     
+     
+        public int sro { get; set; }
+        public int BankAcc { get; set; }
+        public int IFSC_code { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string Area { get; set; }
+        public string District { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+        public string Bankname { get; set; }
+        public string Branch { get; set; }
+        public string Created_by { get; set; }
+        public string Modified_by { get; set; }
+        public string status { get; set; }
+        public DateTime Created_date { get; set; }
+        public DateTime Modified_date
+        {
+            get; set;
+        }
+
+
+        }
+
+
+
+//for controleer
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace WebApplication1.Controllers
+{
+    public class EmpController : Controller
+    {
+        // GET: Emp
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult AddEmployee()
+        {
+            ViewBag.Title = "Add Employee";
+            ViewBag.Message = "";
+
+            EmployeeViewModel objEmployeeViewModel = new EmployeeViewModel();
+            objEmployeeViewModel.CountryList = GetAllCountries();
+
+            return View("AddEmployee", objEmployeeViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult AddEmployee(string Create)
+        {
+            System.Diagnostics.Trace.TraceInformation("Hello..");
+
+            ViewBag.Title = "Add Employee";
+
+            if (ModelState.IsValid)
+            {
+                EmployeeBO objEmployeeBO = new EmployeeBO();
+                objEmployeeBO.FirstName = Request.Form["FirstName"];
+                objEmployeeBO.LastName = Request.Form["LastName"];
+                objEmployeeBO.Salary = int.Parse(Request.Form["Salary"].ToString());
+                objEmployeeBO.Gender = Request.Form["Gender"].ToString();
+
+                if (Request.Form["IsPermanent"] == "false")
+                {
+                    objEmployeeBO.IsPermanent = false;
+                }
+                else
+                {
+                    objEmployeeBO.IsPermanent = true;
+                }
+
+                EmployeeViewModel objEmployeeViewModel = new EmployeeViewModel();
+                objEmployeeBO.CountryId = int.Parse(Request.Form["CountryList"].ToString());
+
+                EmployeeBLL objEmployeeBLL = new EmployeeBLL();
+                int intEmployeeId = objEmployeeBLL.AddEmployee(objEmployeeBO);
+
+                if (intEmployeeId > 1)
+                {
+                    ViewBag.Message = String.Format("Success: Employee added. Employee Id is {0}", intEmployeeId);
+                    return View("SuccessEmployee");
+                }
+                else
+                {
+                    ViewBag.Message = "Error while adding employee. Please try again";
+
+                    objEmployeeViewModel.CountryList = GetAllCountries();
+                    return View("AddEmployee", objEmployeeViewModel);
+                }
+            }
+            else
+            {
+                ViewBag.Message = "Error while adding employee. Please try again";
+
+                EmployeeViewModel objEmployeeViewModel = new EmployeeViewModel();
+                objEmployeeViewModel.CountryList = GetAllCountries();
+
+                return View("AddEmployee", objEmployeeViewModel);
+            }
+        }
+    }
+}
+
+
+
+
+
+///for table
+create table tbl_omr_g6_sro(SRO int identity(1,1) primary key,Address1 varchar(30),
+Address2 varchar(30),Area varchar(30),District varchar(30),
+State varchar(30),Country varchar(30),Bankname varchar(30),
+BankAcc int,Branch varchar(30),IFSC_code int,Created_by varchar(30),Created_date datetime,
+Modified_by varchar(30),Modified_date datetime,status varchar(30))
