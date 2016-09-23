@@ -1,0 +1,259 @@
+OMRS GROUP6 PROCESS PLAY BACK
+Development:
+
+1.During your project delivery stage, which module/application did you develop?
+We developed Module2 that deals with Employee Management.
+
+2.What development methodology was used? What were the phases involved in the development?
+Agile Development Methodology was used.The phases involved in development are:
+Initiation phase
+Definition phase
+Design phase
+Development phase
+Implementation phase
+Testing Phase
+Maintenance phase
+In Agile ,SCRUM Technique is used
+
+3.What were your deliverables in each phase? 
+Deliverables in each phase are:
+Project plan
+User manual
+Executable code module
+Design document
+Testing document
+Code listing
+
+
+4.Explain the phases in ETVX format
+
+ENTRY CRITERIA: Input with 'condition' attached.
+e.g. Approved SRS document is the entry criteria for the development phase.
+
+TASK: Procedures.
+e.g. Preparation of HLD, LLD etc.
+
+VERIFICATION & VALIDATION: Building quality & Verification activities
+e.g. Technical reviews
+
+EXIT CRITERIA: Output with 'condition' attached.
+e.g Approved design document
+It is important to follow ETVX concept for all phases in SDLC.
+
+
+5.List the iQMS documents that can be referred by a development project.
+
+IQMS process document repository contains
+Development Process Handbook
+Quality System Manual
+Quality Procedure Manual
+Quality Format Manual
+Process Flow Diagram
+Template/Form
+Guidelines
+Checklist
+
+********************************************************************************
+
+MAINTAINANCE:
+
+1.What are the phases involved in maintenance project?
+
+Initiation phase
+Definition phase
+Design phase
+Development phase
+Implementation phase
+Follow-up phase
+
+2.List the iQMS documents that can be referred by a maintenance project.
+
+Maintenance Process Handbook
+Quality System Manual
+Quality Procedure Manual
+Quality Format Manual
+Process Flow Diagram
+Template/Form
+Guidelines
+Checklist
+
+3.What could be the possible deliverables?
+The possible deliverables are:
+Standard Operating Procedures
+Performance Reports 
+Implementation Notice
+Program Trouble Reports
+User Satisfaction Review 
+In-Process Review Report 
+Disposition Plan
+
+4.Explain the phases in ETVX format.
+
+ENTRY CRITERIA:HOTO from Development team to Maintenance team
+e.g. Approved HOTO is the entry criteria for the maintenance phase.
+
+TASK:Study the application.
+Set up the Environment for maintenance.
+e.g. Preparation of HLD, LLD etc.
+
+VERIFICATION & VALIDATION: Building quality & Verification activities
+e.g. Technical reviews
+
+EXIT CRITERIA: Output with 'condition' attached.
+e.g Approved CR are implemented
+It is important to follow ETVX concept for all phases in SDLC.
+
+********************************************************************************
+
+Testing and Validation:
+
+1.During your project delivery stage, what types of testing did you perform?
+ SYSTEM & UNIT Testing was carried out.
+
+2.Detail the activities performed  in ETVX format.
+
+ENTRY CRITERIA: Input with 'condition' attached.
+e.g. Approved SRS document is the entry criteria for the testing phase.
+
+TASK: Procedures.
+e.g. Preparation of Test case,Test scenario.
+
+VERIFICATION & VALIDATION: Building quality & Verification activities
+e.g. Technical reviews
+
+EXIT CRITERIA: Output with 'condition' attached.
+e.g Approved test cases.
+It is important to follow ETVX concept for all phases in SDLC.
+
+3.What were your deliverables?
+Test cases Documents
+Test Plan
+Testing Strategy
+Test Scripts
+Test Data
+Test Trace-ability Matrix
+Test Results/reports
+Test summary report
+Install/config guides
+Defect Report
+Release notes 
+
+4.What were the tools used during testing?
+Unit Testing Tools
+Web Tools
+Database Testing Tools
+
+5.Which iQMS documents can be referred by a testing project?
+Testing process Handbook
+
+
+
+********************************************************************************
+
+Configuration Management:
+
+
+1.During your project delivery stage, which tool was used for configuration management?
+
+VSS – Visual source safe
+
+2.Detail the activities performed towards configuration management.
+Configuration Identification
+Configuration Control
+Configuration Status Accounting
+Configuration Auditing
+
+3.What were the items that came under the purview of configuration management?
+The act of evaluating and approving changes to the software comes under the purview.
+
+4.Which iQMS documents can be referred for configuration management?
+
+Conducting review and logging the defects
+
+1.During your project delivery stage, which items underwent reviews?
+All operation including Creating,Viewing,Deleting,Updating underwent reviews.
+
+2.What were the different types of reviews carried out ?
+   Inspection and  Technical review 
+
+3.Detail  the steps involved in the reviews conducted.
+
+Technical review:
+
+It is less formal review
+It is led by the trained moderator but can also be led by a technical expert
+It is often performed as a peer review without management  participation
+Defects are found by the expertswho focus on the content of the document.
+
+Inspection:
+
+It is the most formal review type
+It is led by the trained moderators
+During inspection the documents are prepared and checked thoroughly by the reviewers before the meeting
+It involves peers to examine the product
+A separate preparation is carried out during which the product is examined and the defects are found
+The defects found are documented in a logging list or issue log.
+A formal follow-up is carried out by the moderator applying exit criteria.
+
+4.Where were the defects from the reviews recorded? Showcase the review records.
+
+The defects were logged into Defect Log sheet.
+
+5.What were the templates used?
+Defect log templates was used.
+
+********************************************************************************
+Status Reporting:
+
+1.During your project delivery stage, what was the frequency of status reporting?
+Weekly status report was generated.
+
+2.Detail the steps involved in the status reporting. Showcase recent status report.
+
+Step 1:Status report template was generated
+step 2:Once the template has been generated,the start and end date details is filled by one of the tea mmember in that particular project.
+step 3:The status sof the project is recorded and submited to the client.
+
+3.List the documents referred to prepare status report and list the recipients?
+  Test case documents
+  Defect log
+  The recipient is the client.
+
+4.Find out the iQMS procedure for status reporting
+
+
+
+********************************************************************************
+
+
+Delivery Process:
+
+1.Demonstrate from iQMS Wiki the templates that can be used by a testing project.
+Test Case Testing template
+
+2.What development methodology was used? What were the phases involved in the development?
+Agile is used as development methodology.
+The phases involved in development are :
+Planning
+Analysis
+Design
+Development & Implementation
+Testing
+
+3.What were your deliverables in each phase?  
+
+Staus report , HOTO Check List and defect logs 
+
+4.Explain the phases in ETVX format.
+
+
+5.List the iQMS documents that can be referred by a development project.
+Development process handbook
+Corporate Metrics Deployment Plan
+
+********************************************************************************
+
+
+
+
+
